@@ -174,6 +174,7 @@ const buttonClicked = (e) => {
     }
   }
   playerDisplay()
+  computerMode()
   winningCondition()
 }
 
@@ -185,7 +186,8 @@ const playerDisplay = () => {
   }
 }
 
-const computerMode = () => {
+const gameModeToggle = () => {
+  refreshBoard()
   if (toggle.innerText === 'Play Against the Computer') {
     toggle.innerText = 'Play Against a Friend'
     gameModeDisplay.innerText = 'Currently Playing Against the Computer'
@@ -193,10 +195,11 @@ const computerMode = () => {
     toggle.innerText = 'Play Against the Computer'
     gameModeDisplay.innerText = 'Currently Playing Against a Friend'
   }
+}
 
-  if (gameModeDisplay.innerText === 'Currently Playing Against the Computer') {
-    gameMode = 2
-    const randomIndex = Math.floor(Math.random() * triggers.length)
+const computerMode = () => {
+  const randomIndex = Math.floor(Math.random() * triggers.length)
+  if (currentPlayer === 2 && toggle.innerText != 'Play Against the Computer') {
     triggers[randomIndex].click()
   }
 }
@@ -261,7 +264,7 @@ const refreshBoard = () => {
 
 //Event Listeners
 refresh.addEventListener('click', refreshBoard)
-toggle.addEventListener('click', computerMode)
+toggle.addEventListener('click', gameModeToggle)
 triggers.forEach((triggers) =>
   triggers.addEventListener('click', buttonClicked)
 )
