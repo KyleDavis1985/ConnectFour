@@ -75,13 +75,13 @@ let currentPlayer = 1
 const statusDisplay = document.querySelector('.statusDisplay')
 const gameGrid = document.querySelectorAll('.circle')
 const triggers = document.querySelectorAll('.arrow')
-const trigger1 = document.querySelector('.triggers').children[0]
-const trigger2 = document.querySelector('.triggers').children[1]
-const trigger3 = document.querySelector('.triggers').children[2]
-const trigger4 = document.querySelector('.triggers').children[3]
-const trigger5 = document.querySelector('.triggers').children[4]
-const trigger6 = document.querySelector('.triggers').children[5]
-const trigger7 = document.querySelector('.triggers').children[6]
+// const trigger1 = document.querySelector('.triggers').children[0]
+// const trigger2 = document.querySelector('.triggers').children[1]
+// const trigger3 = document.querySelector('.triggers').children[2]
+// const trigger4 = document.querySelector('.triggers').children[3]
+// const trigger5 = document.querySelector('.triggers').children[4]
+// const trigger6 = document.querySelector('.triggers').children[5]
+// const trigger7 = document.querySelector('.triggers').children[6]
 const refresh = document.querySelector('.refresh')
 const toggle = document.querySelector('.computer')
 
@@ -91,13 +91,11 @@ const buttonClicked = (e) => {
     for (let i = 5; i > -1; i--) {
       if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
         currentPlayer = 2
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-one'
+        gameGrid[i].id = 'player-one'
         break
       } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
         currentPlayer = 1
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-two'
+        gameGrid[i].id = 'player-two'
         break
       }
     }
@@ -105,13 +103,11 @@ const buttonClicked = (e) => {
     for (let i = 11; i > 5; i--) {
       if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
         currentPlayer = 2
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-one'
+        gameGrid[i].id = 'player-one'
         break
       } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
         currentPlayer = 1
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-two'
+        gameGrid[i].id = 'player-two'
         break
       }
     }
@@ -119,13 +115,11 @@ const buttonClicked = (e) => {
     for (let i = 17; i > 11; i--) {
       if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
         currentPlayer = 2
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-one'
+        gameGrid[i].id = 'player-one'
         break
       } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
         currentPlayer = 1
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-two'
+        gameGrid[i].id = 'player-two'
         break
       }
     }
@@ -133,13 +127,11 @@ const buttonClicked = (e) => {
     for (let i = 23; i > 17; i--) {
       if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
         currentPlayer = 2
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-one'
+        gameGrid[i].id = 'player-one'
         break
       } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
         currentPlayer = 1
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-two'
+        gameGrid[i].id = 'player-two'
         break
       }
     }
@@ -147,13 +139,11 @@ const buttonClicked = (e) => {
     for (let i = 29; i > 23; i--) {
       if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
         currentPlayer = 2
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-one'
+        gameGrid[i].id = 'player-one'
         break
       } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
         currentPlayer = 1
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-two'
+        gameGrid[i].id = 'player-two'
         break
       }
     }
@@ -161,13 +151,11 @@ const buttonClicked = (e) => {
     for (let i = 35; i > 29; i--) {
       if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
         currentPlayer = 2
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-one'
+        gameGrid[i].id = 'player-one'
         break
       } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
         currentPlayer = 1
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-two'
+        gameGrid[i].id = 'player-two'
         break
       }
     }
@@ -175,33 +163,55 @@ const buttonClicked = (e) => {
     for (let i = 41; i > 35; i--) {
       if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
         currentPlayer = 2
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-one'
+        gameGrid[i].id = 'player-one'
         break
       } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
         currentPlayer = 1
-        gameGrid[i].id = 'full'
-        gameGrid[i].classList = 'player-two'
+        gameGrid[i].id = 'player-two'
         break
       }
     }
   }
   playerDisplay()
+  winningCondition()
 }
 
 const playerDisplay = () => {
   if (currentPlayer === 1) {
-    statusDisplay.innerText = "It's Player 1's turn"
+    statusDisplay.innerText = "It's Player 1's Turn"
   } else if (currentPlayer === 2) {
-    statusDisplay.innerText = "It's Player 2's turn"
+    statusDisplay.innerText = "It's Player 2's Turn"
   }
 }
-
+console.log(gameGrid[5].classList)
 const computerMode = () => {}
 
-const winningCondition = () => {}
+const winningCondition = () => {
+  for (let i = 0; i < winningPatterns.length; i++) {
+    if (
+      gameGrid[winningPatterns[i][0]].id === 'player-one' &&
+      gameGrid[winningPatterns[i][1]].id === 'player-one' &&
+      gameGrid[winningPatterns[i][2]].id === 'player-one' &&
+      gameGrid[winningPatterns[i][3]].id === 'player-one'
+    ) {
+      statusDisplay.innerText = 'Player 1 Has Won the Game!'
+    } else if (
+      gameGrid[winningPatterns[i][0]].id === 'player-two' &&
+      gameGrid[winningPatterns[i][1]].id === 'player-two' &&
+      gameGrid[winningPatterns[i][2]].id === 'player-two' &&
+      gameGrid[winningPatterns[i][3]].id === 'player-two'
+    ) {
+      statusDisplay.innerText = 'Player 2 Has Won the Game!'
+    }
+  }
+  tieCondition()
+}
 
-const tieCondition = () => {}
+const tieCondition = () => {
+  for (let i = 0; i < gameGrid.length; i++)
+    if (gameGrid.forEach[i].id != 'empty')
+      statusDisplay.innerText = "It's a tie game!"
+}
 
 const refreshBoard = () => {}
 
