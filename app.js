@@ -71,12 +71,143 @@ const winningPatterns = [
   [18, 25, 32, 39]
 ]
 
-const startGame = () => {}
+let currentPlayer = 1
+const statusDisplay = document.querySelector('.statusDisplay')
+const gameGrid = document.querySelectorAll('.circle')
+const triggers = document.querySelectorAll('.arrow')
+const trigger1 = document.querySelector('.triggers').children[0]
+const trigger2 = document.querySelector('.triggers').children[1]
+const trigger3 = document.querySelector('.triggers').children[2]
+const trigger4 = document.querySelector('.triggers').children[3]
+const trigger5 = document.querySelector('.triggers').children[4]
+const trigger6 = document.querySelector('.triggers').children[5]
+const trigger7 = document.querySelector('.triggers').children[6]
+const refresh = document.querySelector('.refresh')
+const toggle = document.querySelector('.computer')
 
-const buttonClicked = () => {}
+const buttonClicked = (e) => {
+  const id = e.target.id
+  if (id === '0') {
+    for (let i = 5; i > -1; i--) {
+      if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
+        currentPlayer = 2
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-one'
+        break
+      } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
+        currentPlayer = 1
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-two'
+        break
+      }
+    }
+  } else if (id === '1') {
+    for (let i = 11; i > 5; i--) {
+      if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
+        currentPlayer = 2
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-one'
+        break
+      } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
+        currentPlayer = 1
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-two'
+        break
+      }
+    }
+  } else if (id === '2') {
+    for (let i = 17; i > 11; i--) {
+      if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
+        currentPlayer = 2
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-one'
+        break
+      } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
+        currentPlayer = 1
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-two'
+        break
+      }
+    }
+  } else if (id === '3') {
+    for (let i = 23; i > 17; i--) {
+      if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
+        currentPlayer = 2
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-one'
+        break
+      } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
+        currentPlayer = 1
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-two'
+        break
+      }
+    }
+  } else if (id === '4') {
+    for (let i = 29; i > 23; i--) {
+      if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
+        currentPlayer = 2
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-one'
+        break
+      } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
+        currentPlayer = 1
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-two'
+        break
+      }
+    }
+  } else if (id === '5') {
+    for (let i = 35; i > 29; i--) {
+      if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
+        currentPlayer = 2
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-one'
+        break
+      } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
+        currentPlayer = 1
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-two'
+        break
+      }
+    }
+  } else if (id === '6') {
+    for (let i = 41; i > 35; i--) {
+      if (gameGrid[i].id === 'empty' && currentPlayer === 1) {
+        currentPlayer = 2
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-one'
+        break
+      } else if (gameGrid[i].id === 'empty' && currentPlayer === 2) {
+        currentPlayer = 1
+        gameGrid[i].id = 'full'
+        gameGrid[i].classList = 'player-two'
+        break
+      }
+    }
+  }
+  playerDisplay()
+}
+
+const playerDisplay = () => {
+  if (currentPlayer === 1) {
+    statusDisplay.innerText = "It's Player 1's turn"
+  } else if (currentPlayer === 2) {
+    statusDisplay.innerText = "It's Player 2's turn"
+  }
+}
+
+const computerMode = () => {}
 
 const winningCondition = () => {}
 
 const tieCondition = () => {}
 
+const refreshBoard = () => {}
+
 //Event Listeners
+refresh.addEventListener('click', refreshBoard)
+toggle.addEventListener('click', computerMode)
+triggers.forEach((triggers) =>
+  triggers.addEventListener('click', buttonClicked)
+)
