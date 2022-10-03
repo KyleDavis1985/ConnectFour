@@ -183,7 +183,7 @@ const playerDisplay = () => {
     statusDisplay.innerText = "It's Player 2's Turn"
   }
 }
-console.log(gameGrid[5].classList)
+
 const computerMode = () => {}
 
 const winningCondition = () => {
@@ -205,6 +205,7 @@ const winningCondition = () => {
     }
   }
   tieCondition()
+  disableBoard()
 }
 
 const tieCondition = () => {
@@ -214,6 +215,19 @@ const tieCondition = () => {
   }
   if (filled === 42) {
     statusDisplay.innerText = "It's a Tie Game!"
+  }
+  disableBoard()
+}
+
+const disableBoard = () => {
+  if (
+    statusDisplay.innerText === 'Player 1 Has Won the Game!' ||
+    statusDisplay.innerText === 'Player 2 Has Won the Game!' ||
+    statusDisplay.innerText === "It's a Tie Game!"
+  ) {
+    triggers.forEach((triggers) =>
+      triggers.removeEventListener('click', buttonClicked)
+    )
   }
 }
 
