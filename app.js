@@ -198,6 +198,7 @@ const gameModeToggle = () => {
 }
 
 const computerMode = () => {
+  winningCondition()
   const randomIndex = Math.floor(Math.random() * triggers.length)
   if (currentPlayer === 2 && toggle.innerText != 'Play Against the Computer') {
     triggers[randomIndex].click()
