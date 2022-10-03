@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 body {
   display: grid;
   justify-content: center;
@@ -8,7 +10,7 @@ body {
 
 h1 {
   text-align: center;
-  font-family: 'Londrina Shadow', cursive;
+  font-family: 'Ranchers', cursive;
   font-size: 3cm;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -104,6 +106,7 @@ h1 {
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
+  font-family: 'Pangolin', cursive;
   padding-bottom: 30px;
 }
 .score {
@@ -127,4 +130,8 @@ h1 {
 .link {
   padding-top: 100px;
   text-align: center;
+}
+
+.statusDisplay{
+  font-family: 'Pangolin', cursive;
 }
