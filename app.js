@@ -70,8 +70,9 @@ const winningPatterns = [
   [19, 26, 33, 40],
   [18, 25, 32, 39]
 ]
-
+let gameMode = 1
 let currentPlayer = 1
+const gameModeDisplay = document.querySelector('.gameModeDisplay')
 const statusDisplay = document.querySelector('.statusDisplay')
 const gameGrid = document.querySelectorAll('.circle')
 const triggers = document.querySelectorAll('.arrow')
@@ -184,7 +185,21 @@ const playerDisplay = () => {
   }
 }
 
-const computerMode = () => {}
+const computerMode = () => {
+  if (toggle.innerText === 'Play Against the Computer') {
+    toggle.innerText = 'Play Against a Friend'
+    gameModeDisplay.innerText = 'Currently Playing Against the Computer'
+  } else if (toggle.innerText === 'Play Against a Friend') {
+    toggle.innerText = 'Play Against the Computer'
+    gameModeDisplay.innerText = 'Currently Playing Against a Friend'
+  }
+
+  if (gameModeDisplay.innerText === 'Currently Playing Against the Computer') {
+    gameMode = 2
+    const randomIndex = Math.floor(Math.random() * triggers.length)
+    triggers[randomIndex].click()
+  }
+}
 
 const winningCondition = () => {
   for (let i = 0; i < winningPatterns.length; i++) {
@@ -237,6 +252,11 @@ const refreshBoard = () => {
       gameGrid[i].id = 'empty'
     }
   }
+  currentPlayer = 1
+  triggers.forEach((triggers) =>
+    triggers.addEventListener('click', buttonClicked)
+  )
+  playerDisplay()
 }
 
 //Event Listeners

@@ -40,6 +40,13 @@ h1 {
   margin: 30px 30px 0 30px;
 }
 
+.arrow {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+}
+
 #player-one {
   background-color: yellow;
   height: 75px;
