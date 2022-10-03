@@ -28,22 +28,22 @@ h1 {
   border: 3px solid #00008b;
   padding: 15px;
   margin: 0 30px 30px 30px;
-  height: 525px;
-  width: 650px;
+  max-height: 375px;
+  max-width: 450px;
 }
 
 .circle {
   background-color: #f8f8ff; 
-  height: 75px;
-  width: 75px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 
 .triggers {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
-  height: 75px;
-  width: 685px;
+  max-height: 60px;
+  max-width: 486px;
   background-color: #708090;
   margin: 10px 30px 0 30px;
 }
@@ -57,15 +57,15 @@ h1 {
 
 #player-one {
   background-color: #fcf75e;
-  height: 75px;
-  width: 75px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 
 #player-two {
   background-color: #ed2939;
-  height: 75px;
-  width: 75px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 
@@ -95,15 +95,17 @@ h1 {
 
 .gameModeDisplay {
   text-align: center;
+  margin: 5px 0 5px 0;
 }
 
 .statusDisplay {
   text-align: center;
+  margin: 5px 0 5px 0;
 }
 
 .scoreboard {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 150px 150px 150px;
   justify-content: center;
   align-items: center;
   font-family: 'Pangolin', cursive;
@@ -128,10 +130,32 @@ h1 {
 }
 
 .link {
-  padding-top: 100px;
+  padding-top: 25px;
   text-align: center;
 }
 
 .statusDisplay{
+  font-family: 'Pangolin', cursive;
+}
+
+#playerOne {
+  color: #fcf75e;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#playerTwo {
+  color: #ed2939;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#tie {
+  color: #3cb371;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.gameModeDisplay {
   font-family: 'Pangolin', cursive;
 }
