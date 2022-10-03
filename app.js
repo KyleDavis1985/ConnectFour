@@ -208,9 +208,13 @@ const winningCondition = () => {
 }
 
 const tieCondition = () => {
-  for (let i = 0; i < gameGrid.length; i++)
-    if (gameGrid.forEach[i].id != 'empty')
-      statusDisplay.innerText = "It's a tie game!"
+  let filled = 0
+  for (let i = 0; i < gameGrid.length; i++) {
+    if (gameGrid[i].id != 'empty') filled++
+  }
+  if (filled === 42) {
+    statusDisplay.innerText = "It's a Tie Game!"
+  }
 }
 
 const refreshBoard = () => {}
