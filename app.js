@@ -231,7 +231,13 @@ const disableBoard = () => {
   }
 }
 
-const refreshBoard = () => {}
+const refreshBoard = () => {
+  for (let i = 0; i < gameGrid.length; i++) {
+    if (gameGrid[i].id === 'player-one' || gameGrid[i].id === 'player-two') {
+      gameGrid[i].id = 'empty'
+    }
+  }
+}
 
 //Event Listeners
 refresh.addEventListener('click', refreshBoard)
