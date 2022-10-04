@@ -9,9 +9,9 @@
 </head>
 <body>
   <h1><span style="color:#ed2939;">Connect</span> <span style="color:#fcf75e;">Four</span></h1>
-  <h2 class="statusDisplay">It's Player 1's Turn</h2>
 <section class="pageGrid">
   <div class="middle">
+    <h2 class="statusDisplay">It's Player 1's Turn</h2>
     <section class="triggers">
       <div class="arrow" id="0">Click Here ⬇</div>
       <div class="arrow" id="1">Click Here ⬇</div>
@@ -65,6 +65,9 @@
       <div class="circle" id="empty"></div>
       <div class="circle" id="empty"></div>
     </section>
+    <div class="refreshing">
+      <button class="refreshGame">Refresh Game</button>
+    </div>
   </div>
   <div class="right">
     <article class="gameDescription">
@@ -81,13 +84,17 @@
       <div class="score" id="tieTally">0</div>
     </section>
     <section class="options">
-      <button class="refresh">Refresh Score</button>
+      <div class="refresher">
+        <button class="refresh">Refresh Score</button>
+      </div>
+      <h2 class="mode">Game Mode</h2>
       <h3 class="gameModeDisplay">Currently Playing Against a Friend</h3>
-      <button class="computer">Play Against the Computer</button>
+      <div class ="modeToggle">
+        <button class="computer">Play Against the Computer</button>
+      </div>
     </section>
   </div>
 </section>
-<button class="refreshGame">Refresh Game</button>
   <a href="index.html" class="link" target="_blank" title="Main Page">Go back to main page</a>
   <script type="text/javascript" src="app.js"></script>
 </body>
