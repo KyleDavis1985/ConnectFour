@@ -86,6 +86,21 @@ const triggers = document.querySelectorAll('.arrow')
 const refresh = document.querySelector('.refresh')
 const toggle = document.querySelector('.computer')
 
+const mouseOver = (e) => {
+  if (currentPlayer === 1) {
+    e.target.classList = 'player-one'
+    e.target.innerText = ''
+  } else if (currentPlayer === 2) {
+    e.target.classList = 'player-two'
+    e.target.innerText = ''
+  }
+}
+
+const mouseOut = (e) => {
+  e.target.classList = 'arrow'
+  e.target.innerText = 'Click Here ⬇'
+}
+
 const buttonClicked = (e) => {
   const id = e.target.id
   if (id === '0') {
@@ -273,3 +288,7 @@ toggle.addEventListener('click', gameModeToggle)
 triggers.forEach((triggers) =>
   triggers.addEventListener('click', buttonClicked)
 )
+triggers.forEach((triggers) =>
+  triggers.addEventListener('mouseover', mouseOver)
+)
+triggers.forEach((triggers) => triggers.addEventListener('mouseout', mouseOut))
