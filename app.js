@@ -76,21 +76,23 @@ const gameModeDisplay = document.querySelector('.gameModeDisplay')
 const statusDisplay = document.querySelector('.statusDisplay')
 const gameGrid = document.querySelectorAll('.circle')
 const triggers = document.querySelectorAll('.arrow')
-// const trigger1 = document.querySelector('.triggers').children[0]
-// const trigger2 = document.querySelector('.triggers').children[1]
-// const trigger3 = document.querySelector('.triggers').children[2]
-// const trigger4 = document.querySelector('.triggers').children[3]
-// const trigger5 = document.querySelector('.triggers').children[4]
-// const trigger6 = document.querySelector('.triggers').children[5]
-// const trigger7 = document.querySelector('.triggers').children[6]
 const refresh = document.querySelector('.refresh')
 const toggle = document.querySelector('.computer')
+const playerOneTally = document.querySelector('.scoreboard').children[3]
+const playerTwoTally = document.querySelector('.scoreboard').children[4]
+const tieTally = document.querySelector('.scoreboard').children[5]
 
 const mouseOver = (e) => {
-  if (currentPlayer === 1) {
+  if (
+    currentPlayer === 1 &&
+    statusDisplay.innerText === "It's Player 1's Turn"
+  ) {
     e.target.classList = 'player-one'
     e.target.innerText = ''
-  } else if (currentPlayer === 2) {
+  } else if (
+    currentPlayer === 2 &&
+    statusDisplay.innerText === "It's Player 2's Turn"
+  ) {
     e.target.classList = 'player-two'
     e.target.innerText = ''
   }
@@ -189,8 +191,8 @@ const buttonClicked = (e) => {
     }
   }
   playerDisplay()
-  computerMode()
   winningCondition()
+  computerMode()
 }
 
 const playerDisplay = () => {
@@ -215,7 +217,6 @@ const gameModeToggle = () => {
 }
 
 const computerMode = () => {
-  winningCondition()
   const randomIndex = Math.floor(Math.random() * triggers.length)
   if (currentPlayer === 2 && toggle.innerText != 'Play Against the Computer') {
     triggers[randomIndex].click()
@@ -247,14 +248,26 @@ const winningCondition = () => {
 }
 
 const tieCondition = () => {
+  let tieTally = 0
   let filled = 0
   for (let i = 0; i < gameGrid.length; i++) {
     if (gameGrid[i].id != 'empty') filled++
   }
   if (filled === 42) {
     statusDisplay.innerText = "It's a Tie Game!"
+    tieTally++
   }
+  scoreboard()
   disableBoard()
+}
+
+const scoreboard = () => {
+  if (statusDisplay.innerText === 'Player 1 Has Won the Game!') {
+    playerOneTally.innerText++
+  } else if (statusDisplay.innerText === 'Player 2 Has Won the Game!') {
+    playerTwoTally.innerText++
+  } else if (statusDisplay.innerText === "It's a Tie Game!")
+    tieTally.innerText++
 }
 
 const disableBoard = () => {
