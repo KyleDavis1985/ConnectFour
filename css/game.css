@@ -4,7 +4,7 @@
 body {
   display: grid;
   justify-content: center;
-  background-color: #43464B;
+  background-color: #21201E;
   margin: 0;
 }
 
@@ -19,11 +19,14 @@ h1 {
 .gameModeDisplay {
   text-align: center;
   margin: 5px 0 5px 0;
+  font-family: 'Pangolin', cursive;
 }
 
 .statusDisplay {
   text-align: center;
   margin: 5px 0 5px 0;
+  font-family: 'Pangolin', cursive;
+  color:#fcf75e;
 }
 
 .pageGrid {
@@ -31,17 +34,26 @@ h1 {
   grid-template-columns: 70% 30%;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 600px;
   width: 800px;
 }
 
 .triggers {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
-  max-height: 60px;
-  max-width: 486px;
+  height: 50px;
+  max-width: 480px;
   background-color: #708090;
-  margin: 10px 30px 0 30px;
+  margin: 10px 30px 0 33px;
+}
+
+.arrow {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pangolin', cursive;
+  font-size: 1.8ch;
+  text-align: center;
 }
 
 .Gameboard {
@@ -67,13 +79,6 @@ h1 {
   border-radius: 50%;
 }
 
-.arrow {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid black;
-}
-
 #player-one {
   background-color: #fcf75e;
   height: 50px;
@@ -86,6 +91,10 @@ h1 {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+
+.right {
+  margin-bottom: 100px;
 }
 
 .gameDescription {
@@ -102,7 +111,7 @@ h1 {
 }
 
 .rules {
-  font-family: 'Ranchers', cursive;
+  font-family: 'Pangolin', cursive;
   border: 3px solid black;
   background-color: #708090;
   font-size: 2ch;
@@ -111,17 +120,18 @@ h1 {
 
 .scoreboard {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 1.5fr 1.5fr 1fr;
   justify-content: right;
   align-items: center;
   font-family: 'Pangolin', cursive;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border: 3px solid black;
 }
+
 .score {
   display: grid;
   justify-content: center;
   align-items: center;
-  border: 3px solid black;
   height: 30px;
   background-color: #708090;
   color: #f8f8ff;
@@ -135,15 +145,6 @@ h1 {
   text-align: center;
   color: #fcf75e;
   font-weight: bold;
-}
-
-.link {
-  padding-top: 25px;
-  text-align: center;
-}
-
-.statusDisplay{
-  font-family: 'Pangolin', cursive;
 }
 
 #playerOne {
@@ -174,20 +175,25 @@ h1 {
 
 .computer {
   color: white;
-  background-color: #708090;
+  background-color: #1f75fe;
   border-radius: 5%;
   border: 3px solid black;
   height: 50px;
+  font-family: 'Pangolin', cursive;
 }
 
 .refresh {
   color: white;
-  background-color: #708090;
+  background-color: #1f75fe;
   border-radius: 5%;
   border: 3px solid black;
   height: 50px;
+  font-family: 'Pangolin', cursive;
 }
 
-.gameModeDisplay {
+.link {
+  padding-top: 25px;
+  text-align: center;
   font-family: 'Pangolin', cursive;
+  color: #fcf75e;
 }

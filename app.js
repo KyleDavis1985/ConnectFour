@@ -181,8 +181,10 @@ const buttonClicked = (e) => {
 const playerDisplay = () => {
   if (currentPlayer === 1) {
     statusDisplay.innerText = "It's Player 1's Turn"
+    statusDisplay.style.color = '#fcf75e'
   } else if (currentPlayer === 2) {
     statusDisplay.innerText = "It's Player 2's Turn"
+    statusDisplay.style.color = '#ed2939'
   }
 }
 
@@ -214,6 +216,7 @@ const winningCondition = () => {
       gameGrid[winningPatterns[i][3]].id === 'player-one'
     ) {
       statusDisplay.innerText = 'Player 1 Has Won the Game!'
+      statusDisplay.style.color = '#fcf75e'
     } else if (
       gameGrid[winningPatterns[i][0]].id === 'player-two' &&
       gameGrid[winningPatterns[i][1]].id === 'player-two' &&
@@ -221,6 +224,7 @@ const winningCondition = () => {
       gameGrid[winningPatterns[i][3]].id === 'player-two'
     ) {
       statusDisplay.innerText = 'Player 2 Has Won the Game!'
+      statusDisplay.style.color = '#ed2939'
     }
   }
   tieCondition()
