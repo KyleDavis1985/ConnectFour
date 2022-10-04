@@ -21,6 +21,7 @@ h1 {
   margin: 5px 0 5px 0;
   font-family: 'Pangolin', cursive;
   color: #3cb371;
+  font-size: 2ch;
 }
 
 .statusDisplay {
@@ -188,11 +189,10 @@ h1 {
   font-size: medium;
 }
 
-.buttons {
+.options {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: auto auto;
   column-gap: 20px;
 }
 

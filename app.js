@@ -76,7 +76,8 @@ const gameModeDisplay = document.querySelector('.gameModeDisplay')
 const statusDisplay = document.querySelector('.statusDisplay')
 const gameGrid = document.querySelectorAll('.circle')
 const triggers = document.querySelectorAll('.arrow')
-const refresh = document.querySelector('.refresh')
+const refreshScore = document.querySelector('.refresh')
+const refreshGame = document.querySelector('.refreshGame')
 const toggle = document.querySelector('.computer')
 const playerOneTally = document.querySelector('.scoreboard').children[3]
 const playerTwoTally = document.querySelector('.scoreboard').children[4]
@@ -214,6 +215,7 @@ const gameModeToggle = () => {
     toggle.innerText = 'Play Against the Computer'
     gameModeDisplay.innerText = 'Currently Playing Against a Friend'
   }
+  refreshScoreboard()
 }
 
 const computerMode = () => {
@@ -295,8 +297,15 @@ const refreshBoard = () => {
   playerDisplay()
 }
 
+const refreshScoreboard = () => {
+  playerOneTally.innerText = '0'
+  playerTwoTally.innerText = '0'
+  tieTally.innerText = '0'
+}
+
 //Event Listeners
-refresh.addEventListener('click', refreshBoard)
+refreshGame.addEventListener('click', refreshBoard)
+refreshScore.addEventListener('click', refreshScoreboard)
 toggle.addEventListener('click', gameModeToggle)
 triggers.forEach((triggers) =>
   triggers.addEventListener('click', buttonClicked)
