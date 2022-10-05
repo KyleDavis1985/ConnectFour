@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+@media only screen {
+  body {
+    background-color: lightblue;
+  }
+}
+
 body {
   display: grid;
   justify-content: center;
