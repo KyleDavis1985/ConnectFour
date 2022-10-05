@@ -259,9 +259,87 @@ h1 {
   color: #fcf75e;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
   body {
     margin: 0;
+    text-decoration: center;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
+  h1 {
+    font-size: 1.5cm;
+    margin-top: 5px;
+    margin-bottom: 275px;
+    margin-top: 200px;
+  }
+
+  .pageGrid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .triggers {
+    column-gap: 4px;
+    height: 25px;
+    width: 230px;
+    margin: 5px 5px 0 16px;
+    padding: 0 5px 0 6.5px;
+  }
+  
+  .arrow {
+    font-size: 0.6ch;
+  }
+  
+  .player-one {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  
+  .player-two {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+
+  .Gameboard {
+    gap: 7px;
+    padding: 7px;
+    margin: 0 15px 15px 15px;
+    max-height: 200px;
+    width: 223px;
+  }
+
+  .circle {
+    background-color: #f8f8ff; 
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  
+  #player-one {
+    background-color: #fcf75e;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  
+  #player-two {
+    background-color: #ed2939;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+
+  .right {
+    max-width: 300px;
+  }
+
+  .computer {
+    margin-bottom: 100px;
+  }
 }
