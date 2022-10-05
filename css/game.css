@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
-@media only screen {
+@media only screen and (max-width: 600px) {
   body {
-    background-color: lightblue;
+    background-color: aqua;
   }
 }
 
