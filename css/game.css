@@ -260,6 +260,10 @@ h1 {
 
 @media screen and (max-width: 1200px) {
   body {
-    background-color: aqua;
+    margin: 0;
+  }
+
+  .pageGrid{
+    max-width: 90%;
   }
 }
