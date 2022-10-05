@@ -3,15 +3,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
 body {
-  background-color: aqua;
+  margin: 0;
+  background-color: #21201E;
   text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.header {
+header {
   font-family: 'Ranchers', cursive;
   font-size: 3cm;
+  color: #1f75fe;
 }
 
-.h1 {
+.top {
   font-family: 'Pangolin', cursive;
+  color: #f8f8ff; 
+}
+
+.bottom {
+  font-family: 'Pangolin', cursive;
+  color: #f8f8ff; 
+  padding-bottom: 20px;
+}
+
+.link {
+  color:#fcf75e;
 }
