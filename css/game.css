@@ -265,14 +265,14 @@ h1 {
 
   .pageGrid {
     display: grid;
-    grid-template-rows: 70% 30%;
+    grid-template-rows: 2fr 1fr;
     justify-content: center;
     align-items: center;
   }
 
   .right {
     display: grid;
-    grid-template-columns: 1 fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
   }
