@@ -1,4 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
 body {
   background-color: aqua;
+  text-align: center;
 }
 
+.header {
+  font-family: 'Ranchers', cursive;
+  font-size: 3cm;
+}
+
+.h1 {
+  font-family: 'Pangolin', cursive;
+}

@@ -252,7 +252,6 @@ const winningCondition = () => {
 }
 
 const tieCondition = () => {
-  let tieTally = 0
   let filled = 0
   for (let i = 0; i < gameGrid.length; i++) {
     if (gameGrid[i].id != 'empty') filled++
