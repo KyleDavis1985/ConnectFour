@@ -16,7 +16,7 @@ Each player takes turns dropping their chips onto the game board. You can drop a
 
 ### **_What you can expect..._**
 
-![Game Board](https://i.imgur.com/CYBin9C.jpg)
+![Game Board](https://i.imgur.com/BDRyxF0.png)
 
 ## **_Trello Link_**
 
