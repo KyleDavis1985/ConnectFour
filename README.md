@@ -24,7 +24,7 @@ Each player takes turns dropping their chips onto the game board. You can drop a
 
 ## **_Surge Link_**
 
-[My Surge Website](insidious-sock.surge.sh)
+[My Surge Website](https://insidious-sock.surge.sh/index.html)
 
 ## **_Credits_**
 
