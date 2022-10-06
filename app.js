@@ -1,4 +1,3 @@
-//Global Variables
 const winningPatterns = [
   [0, 1, 2, 3],
   [1, 2, 3, 4],
@@ -70,6 +69,7 @@ const winningPatterns = [
   [19, 26, 33, 40],
   [18, 25, 32, 39]
 ]
+
 let gameMode = 1
 let currentPlayer = 1
 const gameModeDisplay = document.querySelector('.gameModeDisplay')
@@ -304,7 +304,6 @@ const refreshScoreboard = () => {
   tieTally.innerText = '0'
 }
 
-//Event Listeners
 refreshGame.addEventListener('click', refreshBoard)
 refreshScore.addEventListener('click', refreshScoreboard)
 toggle.addEventListener('click', gameModeToggle)
