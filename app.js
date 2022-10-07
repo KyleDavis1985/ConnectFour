@@ -70,7 +70,6 @@ const winningPatterns = [
   [18, 25, 32, 39]
 ]
 
-let gameMode = 1
 let currentPlayer = 1
 const gameModeDisplay = document.querySelector('.gameModeDisplay')
 const statusDisplay = document.querySelector('.statusDisplay')
